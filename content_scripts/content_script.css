@@ -1,0 +1,50 @@
+/* Style for the AlphaXiv link */
+.abs-button, .alphaXiv-link {
+  color: #007bff;
+  text-decoration: underline;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.abs-button:hover, .alphaXiv-link:hover {
+  color: #0056b3;
+}
+
+/* Style for the injected popup */
+#alphaXiv-popup {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 10000;
+  font-family: Arial, sans-serif;
+  opacity: 0.95;
+}
+
+/* Style for the alert */
+#alphaXiv-alert {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px;
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 10000;
+  opacity: 0.95;
+  font-family: Arial, sans-serif;
+}
+
+#close-alert {
+  margin-left: 10px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 16px;
+}

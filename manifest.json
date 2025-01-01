@@ -1,0 +1,57 @@
+{
+  "manifest_version": 2,
+  "name": "alphaXiv",
+  "version": "1.0",
+  "description": "Unofficial Firefox extension for alphaXiv",
+  
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "alphaxiv@heyimjonas.com",
+      "strict_min_version": "57.0"
+    }
+  },
+
+  "homepage_url": "https://github.com/heyimjonas/alphaxiv-firefox-extension",
+  
+  "icons": {
+    "48": "icons/icon48.png",
+    "96": "icons/icon96.png"
+  },
+
+  "background": {
+    "scripts": ["background_script.js"]
+  },
+
+  "browser_action": {
+    "default_popup": "popup/index.html",
+    "default_icon": {
+      "48": "icons/icon48.png", 
+      "96": "icons/icon96.png"
+    }
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.arxiv.org/*",
+        "*://*.arxiv.org/abs/*",
+        "*://*.arxiv.org/pdf/*",
+        "file:///*"
+      ],
+      "js": ["content_scripts/content_script.js"],
+      "css": ["content_scripts/content_script.css"],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab",
+    "https://*.arxiv.org/*",
+    "https://*.alphaxiv.org/*"
+  ],
+
+  "content_security_policy": "script-src 'self'; object-src 'self'; connect-src 'self' https://api.alphaxiv.org"
+}
